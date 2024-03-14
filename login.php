@@ -8,14 +8,9 @@ $error_message = '';
         include('database/connection.php');
         $username = $_POST['username'];
         $password = $_POST['password'];
-
-
         $query = 'SELECT * FROM users WHERE users.email= "' . $username .'" AND users.password="' . $password .'" LIMIT 1';
         $stmt = $conn->prepare($query);
         $stmt->execute();
-        
-        
-
         
         if($stmt->rowCount() > 0 ){
 
@@ -24,10 +19,7 @@ $error_message = '';
             $_SESSION['user'] = $user;
             //var_dump($_SESSION['user']);
             header('Location: dashboard.php');
-
             die;
-
-
 
         } else $error_message ='please check credentials to ensure they are correct to log in';
         }
@@ -46,7 +38,7 @@ $error_message = '';
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/login.css"> 
 </head>
-<body class="loginBody">
+<body>
 <?php if(!empty($error_message))  { ?>
     
     ?>
@@ -60,31 +52,25 @@ $error_message = '';
     <div class="loginHeader">
         <h1>IMS</h1>
         <p>Inventory Management System</p>
-
-
     </div>
 
-    <div >
-
-   
+    <div>
         <form action="login.php" method="POST">
             <div class="loginInputsContainer">
                 <label for="">Username</label>
-                 <input placeholder="username" name="username" type="text" />
+                 <input class="form-control" placeholder="username" name="username" type="text" />
             </div>
 
             <div class="loginInputsContainer">
                 <label for="">Password</label>
-                <input placeholder="password" name="password" type="password" />
+                <input class="form-control" placeholder="password" name="password" type="password" />
             </div>
 
             <div class="loginButtonContainer">
-                <button>Login</button>
+                <button class="btn btn-success">Login</button>
             </div>
         </form>
     </div>
-
-
 </div>
 <!-- jQuery library -->
 <!-- Latest compiled JavaScript -->
