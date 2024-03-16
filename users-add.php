@@ -44,7 +44,7 @@ include('partials/header.php');
 
   <div class="form-group">
     <label>Image</label>
-    <input type="file" class="form-control" name="image" placeholder="image">
+    <input type="text" class="form-control" name="image" placeholder="image">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
