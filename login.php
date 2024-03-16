@@ -1,11 +1,14 @@
 <?php
+
 //start the session
 session_start();
-if(isset($_SESSION['user'])) header('location: dashboard.php');
+if(isset($_SESSION['user'])) {
+    header('location: dashboard.php');
+}
 
 $error_message = '';
     if($_POST){
-        include('database/connection.php');
+        include('database/connection_PDO.php');
         $username = $_POST['username'];
         $password = $_POST['password'];
         $query = 'SELECT * FROM users WHERE users.email= "' . $username .'" AND users.password="' . $password .'" LIMIT 1';
@@ -21,9 +24,10 @@ $error_message = '';
             header('Location: dashboard.php');
             die;
 
-        } else $error_message ='please check credentials to ensure they are correct to log in';
+        } 
+            else $error_message ='please check credentials to ensure they are correct to log in';
         }
-        
+    
         
     
 ?>

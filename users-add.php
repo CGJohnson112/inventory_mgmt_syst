@@ -20,7 +20,7 @@ include('partials/header.php');
 
 
 <div class="container">
-<form action="database/add_user.php" method="post">
+<form action="database/add_user.php" method="post" enctype="multipart/form-data">
 
 <div class="form-group">
     <label>First Name</label>
@@ -44,9 +44,9 @@ include('partials/header.php');
 
   <div class="form-group">
     <label>Image</label>
-    <input type="text" class="form-control" name="image" placeholder="image">
+    <input type="file" class="form-control" name="image" placeholder="image">
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" name="submit">Submit</button>
 </form>
 
 
