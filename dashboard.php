@@ -34,11 +34,9 @@
         <div class="dashboard_sidebar_menus">
             <ul class="dashboard_menu_lists">
                 <li>
-                    <a href=""><i class="fa fa-dashboard"></i>Link 1</a>
+                    <a href="users-add.php"><i class="fa fa-dashboard"></i>Add New User</a>
                 </li>
-                <li>
-                    <a href=""><i class="fa fa-dashboard"></i>Link 2</a>
-                </li>
+                
             </ul>
         </div>
     </div>

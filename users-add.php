@@ -13,7 +13,7 @@
 <?php
 include('partials/header.php');
 
-
+include('dashboard.php');
 
 ?>
 

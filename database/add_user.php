@@ -1,5 +1,7 @@
 <?php
 require('connection.php');
+include('../dashboard.php');
+
 
 $statusMsg = ''; 
  
